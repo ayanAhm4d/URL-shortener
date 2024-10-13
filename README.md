@@ -24,9 +24,7 @@ A simple URL shortener service built with Go (Golang) using the Repository Patte
 - [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Features
 
@@ -60,7 +58,7 @@ A simple URL shortener service built with Go (Golang) using the Repository Patte
    go run main.go
    ```
 
-Usage
+## Usage
 You can use tools like curl, Postman, or your browser to interact with the API.
 
 Shorten a URL
