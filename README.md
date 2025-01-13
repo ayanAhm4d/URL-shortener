@@ -3,7 +3,13 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/www.linkedin.com/in/ayanahmad15) [![X](https://img.shields.io/badge/X-black.svg?logo=X&logoColor=white)](https://x.com/ayanAhm4d) 
 
 # 💻 Tech Stack:
-![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
+- Tech Stack
+
+- Backend: Go (Gin framework)
+
+- Database: Redis
+
+Containerization: Docker, Docker Compose
 # 📊 GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api?username=ayanAhm4d&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
 ![](https://github-readme-streak-stats.herokuapp.com/?user=ayanAhm4d&theme=dark&hide_border=false)<br/>
@@ -22,6 +28,7 @@ The URL Shortener project is a high-performance web application built with Go, D
 
 - [Features](#features)
 - [Project Structure](#project-structure)
+- [Environment Variables](#environment-variables)
 - [Installation](#installation)
 - [Usage](#usage)
 
@@ -61,6 +68,17 @@ URL-shortener/
 ├── .env
 └── README.md
 ```
+## Environment Variables
+
+Create a .env file in the project root directory with the following variables:
+```
+DB_ADDR=localhost:6379
+DB_PASSWORD=
+DOMAIN=localhost:3000
+API_QUOTA=10
+APP_PORT=:3000
+```
+
 
 ## Installation
 
