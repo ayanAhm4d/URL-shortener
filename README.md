@@ -80,18 +80,43 @@ DOMAIN=localhost:3000
    ```bash
    git clone https://github.com/ayanAhm4d/URL-shortener.git
    ```
-2. Install dependencies:
+2. Database Setup.
+```
+   
+   CREATE DATABASE IF NOT EXISTS url_shortener;
+   USE url_shortener;
+
+   CREATE TABLE urls (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    short_url VARCHAR(255) UNIQUE NOT NULL,
+    original_url TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    expires_at DATETIME NOT NULL
+   );
+
+   CREATE TABLE rate_limits (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    client_ip VARCHAR(45) NOT NULL,
+    remaining INT NOT NULL,
+    reset_at DATETIME NOT NULL,
+    UNIQUE KEY unique_ip (client_ip)
+   );
+
+```
+   
+3. Install dependencies:
    ```
    go mod tidy
    ```
 
 
-1. Run and start the services:
+1. Start the server:
    ```
-  go run main.go
+   go run main.go
    ```
 
-  
+
+
 2. Access the application at http://localhost:3000.
 
 ## Usage
@@ -124,9 +149,6 @@ Example: http://localhost:3000/4fg redirects to https://example.com.
 
 
 You can use tools like curl, Postman, or your browser to interact with the API.
-
-
-
 
 Contributing
 If you'd like to contribute, feel free to open an issue or submit a pull request.
