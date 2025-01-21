@@ -3,11 +3,8 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/www.linkedin.com/in/ayanahmad15) [![X](https://img.shields.io/badge/X-black.svg?logo=X&logoColor=white)](https://x.com/ayanAhm4d) 
 
 # 💻 Tech Stack:
-- Backend: Go (Gin framework)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
-- Database: Redis
-
-- Containerization: Docker, Docker Compose
 # 📊 GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api?username=ayanAhm4d&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
 ![](https://github-readme-streak-stats.herokuapp.com/?user=ayanAhm4d&theme=dark&hide_border=false)<br/>
@@ -43,38 +40,36 @@ The URL Shortener project is a high-performance web application built with Go, D
 
 - HTTPS Enforcement: Ensures all URLs are served with HTTP or HTTPS.
 
-- Redis Integration: Uses Redis for high-speed storage and retrieval.
 
-- Dockerized Deployment: Simplified deployment with Docker and Docker Compose.
 
 ## Project Structure
 
 
 ```
-URL-shortener/
-├── api/
-    ├── database/
-	  ├──database.go
-    ├── helpers/
-	  ├─ helpers.go
-    ├── routes/
-	  ├──resolve.go
-	  ├──shorten.go
-├── main.go
-├── Dockerfile
-├── docker-compose.yml
+url-shortener/
 ├── .env
-└── README.md
+├── go.mod
+├── go.sum
+├── main.go
+├── database/
+│   ├── database.go
+│   └── schema.sql
+├── helpers/
+│   └── helpers.go
+└── routes/
+    ├── resolve.go
+    └── shorten.go
 ```
 ## Environment Variables
 
 Create a .env file in the project root directory with the following variables:
 ```
-DB_ADDR=localhost:6379
-DB_PASSWORD=
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=url_shortener
 DOMAIN=localhost:3000
-API_QUOTA=10
-APP_PORT=:3000
 ```
 
 
@@ -89,16 +84,14 @@ APP_PORT=:3000
    ```
    go mod tidy
    ```
-Using Docker
 
-1. Build and start the services:
+
+1. Run and start the services:
    ```
-   docker-compose build
+  go run main.go
    ```
 
-   ```
-   docker-compose up -d
-   ```
+  
 2. Access the application at http://localhost:3000.
 
 ## Usage
@@ -132,17 +125,7 @@ Example: http://localhost:3000/4fg redirects to https://example.com.
 
 You can use tools like curl, Postman, or your browser to interact with the API.
 
-## Dockerfile Explanation
 
-- Builder Stage: Builds the Go binary for the application.
-
-- Runtime Stage: Runs the application with a minimal Alpine image to ensure a lightweight container.
-
-## Docker-Compose Explanation
-
-- API Service: Builds and runs the Go application.
-
-- DB Service: Runs a Redis instance.
 
 
 Contributing
