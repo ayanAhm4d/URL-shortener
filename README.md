@@ -51,14 +51,15 @@ url-shortener/
 ├── go.mod
 ├── go.sum
 ├── main.go
-├── database/
-│   ├── database.go
-│   └── schema.sql
-├── helpers/
-│   └── helpers.go
-└── routes/
-    ├── resolve.go
-    └── shorten.go
+├── api/
+     ├── database/
+     │   ├── database.go
+     │   └── schema.sql
+     ├── helpers/
+     │   └── helpers.go
+     └── routes/
+         ├── resolve.go
+         └── shorten.go
 ```
 ## Environment Variables
 
