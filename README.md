@@ -13,8 +13,6 @@
 ---
 [![](https://visitcount.itsvg.in/api?id=ayanAhm4d&icon=0&color=0)](https://visitcount.itsvg.in)
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
-[https://roadmap.sh/projects/url-shortening-service]
 
 # URL Shortener
 
